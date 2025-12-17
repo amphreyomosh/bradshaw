@@ -878,9 +878,10 @@ body {
 
 /* Carousel Wrapper */
 .carousel-wrapper {
-  background-color: var(--dark-purple);
+  background-color: hsl(45, 70%, 65%);
   border-radius: 20px;
   padding: 5rem 4rem;
+  margin: 0 40px;
   color: var(--white);
   overflow: hidden;
   position: relative;
@@ -900,7 +901,7 @@ body {
   font-family: var(--font-display);
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--white);
+  color: var(--dark-purple);
   line-height: 1.2;
   max-width: 600px;
   margin: 0 0 0.5rem 0; /* Add bottom margin */
@@ -908,7 +909,7 @@ body {
 
 .carousel-subtitle {
   font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: #1c1c1c;
   max-width: 600px;
   line-height: 1.5;
   margin: 0;
@@ -949,20 +950,6 @@ body {
   padding-bottom: 1rem;
 }
 
-.tab {
-  font-size: 1rem;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.6);
-  cursor: pointer;
-  transition: color var(--transition-fast);
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-}
-
-.tab:hover, .tab.active {
-  color: var(--white);
-  background-color: rgba(255, 255, 255, 0.1);
-}
 
 /* Track & Cards */
 .carousel-track-container {
@@ -992,14 +979,14 @@ body {
 }
 
 .carousel-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-2px);
 }
 
 .card-image {
   height: 320px;
   background-size: cover;
   background-position: center;
-  border-radius: 12px;
+  border-radius: 6px;
   margin-bottom: 1rem;
 }
 
@@ -1007,15 +994,17 @@ body {
   font-family: var(--font-primary);
   font-size: 1.1rem;
   font-weight: 700;
-  color: var(--yellow-dull);
+  color: var(--dark-purple);
+  margin-top: 2rem;
   margin-bottom: 0.5rem;
   text-transform: uppercase;
+ 
 }
 
 .card-content p {
   font-size: 1rem;
   line-height: 1.5;
-  color: rgba(255, 255, 255, 0.9);
+  color: #1c1c1c;
 }
 
 @media (max-width: 768px) {
