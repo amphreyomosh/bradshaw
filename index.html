@@ -84,7 +84,7 @@
             <div class="carousel-track">
               <!-- Card 1 -->
               <div class="carousel-card">
-                <div class="card-image" style="background-image: url('logo/community_partners.png');"></div>
+                <div class="card-image" style="background-image: url('logo/walking.jpg');"></div>
                 <div class="card-content">
                   <h3>A Partnership With Heart</h3>
                   <p>Walking alongside families to nurture every part of a child’s development.</p>
@@ -93,7 +93,7 @@
               
               <!-- Card 2 -->
               <div class="carousel-card">
-                <div class="card-image" style="background-image: url('logo/community_event.png');"></div>
+                <div class="card-image" style="background-image: url('logo/second.jpg');"></div>
                 <div class="card-content">
                   <h3>More Than a School — A Community</h3>
                   <p>Where parents feel supported, students feel known, and relationships matter.</p>
@@ -102,7 +102,7 @@
 
               <!-- Card 3 -->
               <div class="carousel-card">
-                <div class="card-image" style="background-image: url('logo/community_journey.png');"></div>
+                <div class="card-image" style="background-image: url('logo/third.jpg');"></div>
                 <div class="card-content">
                   <h3>We Journey Together</h3>
                   <p>Uniting home and school to provide the consistency kids need to thrive.</p>
@@ -111,7 +111,7 @@
 
               <!-- Card 4 -->
               <div class="carousel-card">
-                <div class="card-image" style="background-image: url('https://placehold.co/400x300/6A1B9A/FFF?text=Student+Life');"></div>
+                <div class="card-image" style="background-image: url('logo/fourth.jpg');"></div>
                 <div class="card-content">
                   <h3>Student Life</h3>
                   <p>Discovering passions and building lifelong friendships in a supportive environment.</p>
@@ -120,7 +120,7 @@
 
               <!-- Card 5 -->
               <div class="carousel-card">
-                <div class="card-image" style="background-image: url('https://placehold.co/400x300/C0392B/FFF?text=Athletics');"></div>
+                <div class="card-image" style="background-image: url('logo/fifth.jpg');"></div>
                 <div class="card-content">
                   <h3>Pride Athletics</h3>
                   <p>Developing teamwork, discipline, and physical excellence on the field.</p>
@@ -175,24 +175,49 @@
       </div>
     </section>
 
-    <!-- 5. The Result -->
-    <section class="section section-result fade-in-section">
-      <div class="container text-center">
-        <h2 class="section-title">The Result</h2>
-        <h3 class="result-headline">Graduates who are prepared, grounded, and ready for life.</h3>
-        <button class="btn-primary mt-4">Start Your Journey</button>
+    <!-- 5. Upcoming Events -->
+    <section class="section section-events fade-in-section">
+      <div class="events-container">
+        <div class="events-header">
+          <p class="events-subtitle">Dates To Remember</p>
+          <h2 class="events-title">Upcoming Events</h2>
+        </div>
+
+        <div class="events-grid">
+          <!-- Event Card 1 -->
+          <div class="event-card">
+            <h3 class="event-title">TK-12th Minimum Day</h3>
+            <p class="event-date">December 19, 2025</p>
+            <p class="event-time">8:00 AM</p>
+          </div>
+
+          <!-- Event Card 2 -->
+          <div class="event-card">
+            <h3 class="event-title">Winter Concert</h3>
+            <p class="event-date">December 17, 2025</p>
+            <p class="event-time">6:00 PM</p>
+          </div>
+
+          <!-- Event Card 3 -->
+          <div class="event-card">
+            <h3 class="event-title">Year 8 Parents Evening</h3>
+            <p class="event-date">March 3, 2026</p>
+            <p class="event-time">5:30 PM</p>
+          </div>
+
+          <!-- Event Card 4 -->
+          <div class="event-card">
+            <h3 class="event-title">Spring Term Begins</h3>
+            <p class="event-date">January 6, 2026</p>
+            <p class="event-time">8:00 AM</p>
+          </div>
+        </div>
+
+        <a href="#" class="view-all-events">
+          View all Events <i class="fa-solid fa-arrow-right"></i>
+        </a>
       </div>
     </section>
-
-    <!-- Main Content Area -->
-    <main>
-      <!-- Additional content sections can be added here -->
-      <div style="height: 50vh; padding: 2rem;">
-        <!-- Placeholder content to enable scrolling -->
-        <h2>Experience the Difference</h2>
-        <p>Scroll down to reveal the footer.</p>
-      </div>
-    </main>
   </div>
 
   <!-- Footer -->
@@ -357,7 +382,9 @@
       }
     }
 
-    // Footer Reveal Effect
+      /* Events Timeline Navigation - Infinite Scrolling (Removed) */
+    
+
     function initFooterReveal() {
       const footer = document.querySelector('.footer');
       const wrapper = document.getElementById('content-wrapper');
