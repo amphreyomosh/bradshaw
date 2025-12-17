@@ -1149,7 +1149,7 @@ body {
               url('../logo/prayer1.jpg');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: scroll;
   padding: 6rem 2rem;
   color: var(--white);
 }
