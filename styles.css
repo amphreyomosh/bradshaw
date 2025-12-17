@@ -1186,13 +1186,13 @@ body {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
   margin-bottom: 3rem;
 }
 
 .event-card {
-  width: 230px;
-  height: 230px;
+  width: 200px;
+  height: 200px;
   border: 3px solid var(--yellow-dull);
   border-radius: 10px;
   display: flex;
