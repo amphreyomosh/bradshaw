@@ -132,37 +132,32 @@
     </section>
 
     <!-- 3. Formation Happens Here (Sticky Scroll) -->
-    <section class="formation-scroll-container">
-      <div class="formation-sticky-wrapper">
-        <!-- Visuals Column (Left) -->
-        <div class="formation-visual-col">
-           <div class="formation-img active" style="background-image: url('logo/prayer1.jpg')"></div>
-           <div class="formation-img" style="background-image: url('logo/second.jpg')"></div>
-           <div class="formation-img" style="background-image: url('logo/third.jpg')"></div>
+    <!-- 3. Formation Happens Here (Refactored) -->
+    <section class="section section-formation fade-in-section">
+      <!-- Row 1: Image Left, Text Right -->
+      <div class="formation-row">
+        <div class="formation-image" style="background-image: url('logo/prayer1.jpg')"></div>
+        <div class="formation-content">
+          <h2 class="formation-headline">INSPIRING <span class="highlight-red">EXCELLENCE</span></h2>
+          <p>Our plans for the future are ambitious. Our four aims—to inspire, engage, encourage and cultivate—will drive all that we do to ensure that BCS provides a truly modern and relevant education delivering excellence in all aspects of school life.</p>
         </div>
+      </div>
+      
+      <!-- Row 2: Text Left, Image Right -->
+      <div class="formation-row reverse">
+        <div class="formation-image" style="background-image: url('logo/second.jpg')"></div>
+        <div class="formation-content">
+          <h2 class="formation-headline">SPIRITUAL <span class="highlight-red">GROWTH</span></h2>
+          <p>We exist to help students discover who they are in Christ. Every classroom, program, and relationship is shaped by the belief that education is formation of the whole child—nurturing their spiritual, intellectual, social, and emotional growth.</p>
+        </div>
+      </div>
 
-        <!-- Content Column (Right) -->
-        <div class="formation-content-col">
-           <!-- Slide 1 -->
-           <div class="formation-text-block active">
-             <h2 class="formation-headline">INSPIRING <span class="highlight-red">EXCELLENCE</span></h2>
-             <p>Our plans for the future are ambitious. Our four aims—to inspire, engage, encourage and cultivate—will drive all that we do to ensure that BCS provides a truly modern and relevant education delivering excellence in all aspects of school life.</p>
-
-           </div>
-           
-           <!-- Slide 2 -->
-           <div class="formation-text-block">
-             <h2 class="formation-headline">SPIRITUAL <span class="highlight-red">GROWTH</span></h2>
-             <p>We exist to help students discover who they are in Christ. Every classroom, program, and relationship is shaped by the belief that education is formation of the whole child—nurturing their spiritual, intellectual, social, and emotional growth.</p>
-
-           </div>
-
-           <!-- Slide 3 -->
-           <div class="formation-text-block">
-             <h2 class="formation-headline">COMMUNITY <span class="highlight-red">LIFE</span></h2>
-             <p>A school community built on trust, communication, and shared purpose. We walk alongside students as they learn to see the world through a biblical lens and respond to life with courage, compassion, and integrity.</p>
-
-           </div>
+      <!-- Row 3: Image Left, Text Right -->
+      <div class="formation-row">
+        <div class="formation-image" style="background-image: url('logo/third.jpg')"></div>
+        <div class="formation-content">
+          <h2 class="formation-headline">COMMUNITY <span class="highlight-red">LIFE</span></h2>
+          <p>A school community built on trust, communication, and shared purpose. We walk alongside students as they learn to see the world through a biblical lens and respond to life with courage, compassion, and integrity.</p>
         </div>
       </div>
     </section>
@@ -415,57 +410,7 @@
       setTimeout(updateMargin, 1000);
     }
 
-    // Initialize sticky scroll for Formation section
-    function initFormationScroll() {
-      const container = document.querySelector('.formation-scroll-container');
-      const stickyWrapper = document.querySelector('.formation-sticky-wrapper');
-      const images = document.querySelectorAll('.formation-img');
-      const textBlocks = document.querySelectorAll('.formation-text-block');
-
-      if (!container || !stickyWrapper || images.length === 0) return;
-
-      function handleScroll() {
-        const containerRect = container.getBoundingClientRect();
-        const wrapperHeight = stickyWrapper.offsetHeight; 
-        const containerHeight = container.offsetHeight;
-        
-        const offset = 70; // Header height
-        const scrollableDistance = containerHeight - wrapperHeight;
-        
-        if (scrollableDistance <= 0) return;
-        
-        // Calculate progress starting when sticky wrapper pins at 'offset' from top
-        // rect.top decreases as we scroll down. When rect.top == offset, we are at start.
-        // When rect.top < offset, we are scrolling inside.
-        let progress = -(containerRect.top - offset) / scrollableDistance;
-        progress = Math.max(0, Math.min(1, progress));
-        
-        const totalSlides = images.length;
-        let activeIndex = Math.floor(progress * totalSlides);
-        if (activeIndex >= totalSlides) activeIndex = totalSlides - 1;
-        
-        images.forEach((img, index) => {
-          if (index === activeIndex) {
-            img.classList.add('active');
-          } else {
-            img.classList.remove('active');
-          }
-        });
-        
-        textBlocks.forEach((block, index) => {
-          if (index === activeIndex) {
-            block.classList.add('active');
-          } else {
-            block.classList.remove('active');
-          }
-        });
-      }
-
-      window.addEventListener('scroll', handleScroll, { passive: true });
-      handleScroll();
-    }
-    
-    initFormationScroll();
+    // Formation sticky scroll removed
   </script>
 </body>
 </html>
