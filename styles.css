@@ -1030,60 +1030,177 @@ body {
   }
 }
 
-/* 3. Formation Happens Here */
-.section-formation {
+/* 3. Formation Happens Here (Sticky Scroll) */
+.formation-scroll-container {
+  position: relative;
+  height: 220vh; /* Reduced height for faster scrolling transitions */
   background-color: var(--white);
-  color: var(--dark-purple);
+  z-index: 10;
+  margin-top: 4rem; /* Added margin as requested */
 }
 
-.section-formation .section-title {
-  color: var(--dark-purple);
+.formation-sticky-wrapper {
+  position: sticky;
+  top: 70px; /* Accounts for scrolled header height */
+  height: calc(100vh - 70px);
+  width: 100%;
+  display: flex;
+  overflow: hidden;
 }
 
-.section-intro {
-  font-size: 1.25rem;
-  margin-bottom: 3rem;
-  opacity: 0.9;
+/* Visuals Column (Left) */
+.formation-visual-col {
+  flex: 1;
+  position: relative;
+  background-color: transparent;
+  overflow: hidden;
 }
 
-.formation-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1.5rem;
-  margin-top: 2rem;
+.formation-img {
+  position: absolute;
+  inset: 4rem 0 4rem 0; /* Right edge 0 to touch divider */
+  background-size: cover;
+  background-position: center;
+  border-radius: 0 12px 12px 0;
+  opacity: 0;
+  height: 480px;
+  transform: scale(1.05); /* Slight zoom for effect */
+  transition: opacity 0.4s ease-in-out, transform 0.6s ease-in-out; /* Faster transitions */
 }
 
-.formation-card {
-  text-align: center;
+.formation-img.active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 1;
 }
 
-.icon-circle {
-  width: 80px;
-  height: 80px;
-  background-color: var(--dark-purple);
-  border-radius: 50%;
+/* Content Column (Right) */
+.formation-content-col {
+  flex: 1;
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin: 0 auto 1.5rem;
-  font-size: 2rem;
-  color: var(--yellow-dull);
-  transition: all var(--transition-base);
+  justify-content: flex-start; /* Align to left */
+  background-color: var(--white);
+  padding: 4rem 4rem 4rem 40px; /* Only 20px padding on left */
+  /* Ensuring text remains stationary while scrolling */
 }
 
-.formation-card:hover .icon-circle {
-  background-color: var(--yellow-dull);
+.formation-text-block {
+  position: absolute;
+  width: 80%;
+  max-width: 600px;
+  left: 60px; /* Explicit positioning */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.4s ease-out; /* Faster text transition */
+  pointer-events: none;
+}
+
+.formation-text-block.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+  z-index: 1;
+}
+
+.formation-headline {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  line-height: 1.1;
+  font-weight: 800;
   color: var(--dark-purple);
-  transform: scale(1.1);
-}
-
-.formation-card h3 {
-  font-family: var(--font-primary);
-  font-size: 1.1rem;
-  font-weight: 600;
+  margin-bottom: 2rem;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+}
+
+.highlight-red {
   color: var(--dark-purple);
+  display: inline;
+}
+
+.formation-text-block p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #4a4a4a;
+  margin-bottom: 2.5rem;
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .formation-headline {
+    font-size: 2.5rem;
+  }
+  
+  .formation-scroll-container {
+    height: auto;
+  }
+  
+  .formation-sticky-wrapper {
+    position: relative;
+    height: auto;
+    flex-direction: column;
+    top: auto;
+  }
+  
+  .formation-visual-col {
+    height: 300px;
+    width: 100%;
+  }
+
+  .formation-content-col {
+    padding: 3rem 1.5rem;
+    min-height: auto;
+    display: block;
+  }
+  
+  .formation-text-block {
+    position: relative;
+    opacity: 1;
+    transform: none;
+    margin-bottom: 4rem;
+    pointer-events: all;
+    /* Show all blocks stacked on mobile */
+    display: block; 
+  }
+  
+  .formation-img {
+    opacity: 1; /* Show first image or maybe hide others? */
+  }
+  
+  /* On mobile, we might need a different approach to show multiple images corresponding to blocks.
+     For simplicity, let's just show active block logic via JS still, 
+     BUT we need container height to scroll. 
+     If we set height: auto, sticky won't work.
+     Let's keep 300vh and sticky on mobile? 
+     Sticky often works on mobile. Let's try to keep it.
+  */
+  .formation-scroll-container {
+    height: 300vh;
+  }
+  .formation-sticky-wrapper {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    flex-direction: column; /* Image top, text bottom */
+  }
+  .formation-visual-col {
+    flex: 0 0 40%;
+  }
+  .formation-content-col {
+    flex: 1;
+    padding: 2rem;
+  }
+  .formation-headline {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .formation-text-block p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
 }
 
 /* 4. The PRIDE Journey */
