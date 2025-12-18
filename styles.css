@@ -1238,7 +1238,7 @@ body {
   background-size: cover;
   background-position: center;
   /* border: 4px solid var(--white); removed as per user request */
-  border-radius: 20px;
+  border-radius: 12px;
   display: flex;
   align-items: flex-end; /* Text at bottom */
   text-align: left;
