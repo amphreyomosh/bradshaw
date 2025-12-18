@@ -1418,7 +1418,7 @@ body {
    =================================== */
 
 .footer {
-  background-color: #1c1c1c; /* Updated to dark gray as requested */
+  background-color: #060606; /* Updated to dark gray as requested */
   color: var(--white);
   padding: 4rem 2rem 2rem;
   font-family: var(--font-primary);
