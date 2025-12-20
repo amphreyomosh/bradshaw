@@ -1301,8 +1301,9 @@ h1, h2, h3, h4, h5, h6 {
 /* 6. Upcoming Events Timeline */
 .section-events {
   background: var(--white);
-  padding: 4rem 2rem 6rem 2rem;
+  padding: 2rem 2rem 6rem 2rem;
   color: var(--dark-purple);
+  margin-top: 2rem;
 }
 
 .events-container {
@@ -1491,9 +1492,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* =================================== 
-   Footer Design 
-   =================================== */
 
 /* =================================== 
    Footer Design 
