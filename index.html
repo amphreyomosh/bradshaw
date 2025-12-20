@@ -405,23 +405,24 @@
         });
       });
       
-      // Initialize Scroll Animations
+      
+      // Re-initialize Scroll Animations with early trigger (400px before entry)
       const observerOptions = {
         root: null,
-        rootMargin: '0px 0px -50px 0px',
-        threshold: 0.05
+        rootMargin: '0px 0px 400px 0px',
+        threshold: 0
       };
 
       const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target); // Only animate once
+            observer.unobserve(entry.target);
           }
         });
       }, observerOptions);
 
-      document.querySelectorAll('.fade-in-section, .slide-in-hidden').forEach(section => {
+      document.querySelectorAll('.fade-in-section').forEach(section => {
         observer.observe(section);
       });
 
@@ -494,24 +495,31 @@
     function initHorizontalScroll() {
       if (!stickySection || !resultsTrack) return;
 
+      let ticking = false;
       window.addEventListener('scroll', () => {
-        const offsetTop = stickySection.offsetTop;
-        const sectionHeight = stickySection.offsetHeight;
-        const scrollY = window.scrollY;
-        const windowHeight = window.innerHeight;
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            const offsetTop = stickySection.offsetTop;
+            const sectionHeight = stickySection.offsetHeight;
+            const scrollY = window.scrollY;
+            const windowHeight = window.innerHeight;
 
-        // Calculate progress
-        let progress = (scrollY - offsetTop) / (sectionHeight - windowHeight);
-        
-        // Clamp progress
-        progress = Math.max(0, Math.min(1, progress));
-        
-        // Calculate Translation
-        const maxScroll = resultsTrack.scrollWidth - window.innerWidth;
-        
-        if (maxScroll > 0) {
-          const translate = maxScroll * progress;
-          resultsTrack.style.transform = `translateX(-${translate}px)`;
+            // Calculate progress
+            let progress = (scrollY - offsetTop) / (sectionHeight - windowHeight);
+            
+            // Clamp progress
+            progress = Math.max(0, Math.min(1, progress));
+            
+            // Calculate Translation
+            const maxScroll = resultsTrack.scrollWidth - window.innerWidth;
+            
+            if (maxScroll > 0) {
+              const translate = maxScroll * progress;
+              resultsTrack.style.transform = `translateX(-${translate}px)`;
+            }
+            ticking = false;
+          });
+          ticking = true;
         }
       }, { passive: true });
     }

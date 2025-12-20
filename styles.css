@@ -672,13 +672,13 @@ h1, h2, h3, h4, h5, h6 {
    Homepage Sections
    =================================== */
 
-/* Animation Classes */
+/* Animation Classes - optimized for zero delay */
 .fade-in-section {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s cubic-bezier(0.215, 0.61, 0.355, 1), transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transform: translateY(15px);
+  transition: opacity 0.25s cubic-bezier(0.215, 0.61, 0.355, 1), transform 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
   will-change: opacity, transform;
-  visibility: hidden; /* Prevent interaction while hidden */
+  visibility: hidden;
 }
 
 .fade-in-section.is-visible {
@@ -1200,7 +1200,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* 5. Results Section (Horizontal Scroll) */
 .section-results-scroll {
-  height: 500vh; /* Determines the scroll duration - reduced for faster scroll */
+  height: 300vh; /* Determines the scroll duration - reduced for snappy horizontal scroll */
   position: relative;
   background: var(--white);
   margin-top: 4rem;
