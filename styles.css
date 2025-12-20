@@ -1300,7 +1300,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* 6. Upcoming Events Timeline */
 .section-events {
-  background: var(--yellow-dull);
+  background: var(--white);
   padding: 6rem 2rem;
   color: var(--dark-purple);
 }
@@ -1325,7 +1325,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .events-subtitle {
   font-size: 1.125rem;
-  color: var(--white);
+  color: var(--dark-purple);
+  opacity: 0.8;
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 0.5rem;
@@ -1430,7 +1431,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 auto;
   align-items: center;
   gap: 0.5rem;
-  color: var(--white);
+  color: var(--dark-purple);
   font-size: 1.125rem;
   font-weight: 700;
   text-decoration: none;
