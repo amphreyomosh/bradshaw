@@ -1261,7 +1261,7 @@ h1, h2, h3, h4, h5, h6 {
   max-height: 600px;
   flex-shrink: 0;
   position: relative;
-  border-radius: 8px;
+  border-radius: 12px;
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -1301,7 +1301,7 @@ h1, h2, h3, h4, h5, h6 {
 /* 6. Upcoming Events Timeline */
 .section-events {
   background: var(--white);
-  padding: 6rem 2rem;
+  padding: 4rem 2rem 6rem 2rem;
   color: var(--dark-purple);
 }
 
