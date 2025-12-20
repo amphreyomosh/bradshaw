@@ -1247,7 +1247,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .horizontal-track {
   display: flex;
-  gap: 50px;
+  gap: 75px;
   width: max-content;
   padding: 0 10vw 120px 10vw; /* Explicit bottom spacing for cards */
   will-change: transform;
@@ -1261,7 +1261,7 @@ h1, h2, h3, h4, h5, h6 {
   max-height: 600px;
   flex-shrink: 0;
   position: relative;
-  border-radius: 12px;
+  border-radius: 4px;
   background-size: cover;
   background-position: center;
   overflow: hidden;
