@@ -1142,7 +1142,7 @@ body {
 /* 4. The PRIDE Journey */
 .section-journey {
   position: relative;
-  height: 600px; /* Increased height */
+  height: 700px; /* Increased height */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1158,6 +1158,7 @@ body {
   height: 100%;
   object-fit: cover;
   z-index: 0;
+  
 }
 
 .journey-overlay {
@@ -1182,9 +1183,9 @@ body {
 
 .section-journey .section-text {
   color: var(--white);
-  font-size: 1.15rem; /* Match Formation p size (approx) */
+  font-size: 1.6rem; /* Match Formation p size (approx) */
   line-height: 1.8;
-  font-weight: 400; /* Ensure it's not too bold or thin */
+  font-weight: 200; /* Ensure it's not too bold or thin */
 }
 
 /* 5. Upcoming Events Timeline */
