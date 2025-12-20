@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Bradshaw Christian School - Excellence in Education with Faith-Based Values">
   <title>Bradshaw Christian School - Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Faustina:ital,wght@0,300..800;1,300..800&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -171,8 +174,66 @@
         </div>
       </div>
     </section>
+    <!-- 5. The results section -->
+    <!-- 5. The results section (Horizontal Scroll) -->
+    <section class="section-results-scroll" id="resultsScrollSection">
+      <div class="sticky-wrapper">
+        <div class="results-header-group">
+          <h2 class="results-headline">OUR RESULTS</h2>
+          <p class="results-text">BCS graduates leave with strong academics, grounded faith, and the character to face life with wisdom and purpose. They are prepared not just for college, but for a meaningful life of leadership, service, and influence.</p>
+        </div>
+        <div class="horizontal-track" id="resultsTrack">
+          
+          <!-- Card 1 -->
+          <div class="result-scroll-card" style="background-image: url('logo/prayer1.jpg')">
+            <div class="result-overlay"></div>
+            <div class="result-inner-content">
+              <h3>Prepared for College — and for Life</h3>
+              <p>Graduates grounded in faith, shaped by character, and ready for every next step.</p>
+            </div>
+          </div>
 
-    <!-- 5. Upcoming Events -->
+          <!-- Card 2 -->
+          <div class="result-scroll-card" style="background-image: url('logo/second.jpg')">
+            <div class="result-overlay"></div>
+            <div class="result-inner-content">
+              <h3>Where Purpose Meets Preparation</h3>
+              <p>BCS students step into the future with confidence and clarity.</p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="result-scroll-card" style="background-image: url('logo/third.jpg')">
+            <div class="result-overlay"></div>
+            <div class="result-inner-content">
+              <h3>Equipped to Lead and Serve</h3>
+              <p>Shaping graduates who influence their world with wisdom and compassion.</p>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="result-scroll-card" style="background-image: url('logo/openhouse.jpg')">
+            <div class="result-overlay"></div>
+            <div class="result-inner-content">
+              <h3>A Foundation That Lasts</h3>
+              <p>Built on faith, strengthened by community, carried into adulthood.</p>
+            </div>
+          </div>
+          
+          <!-- Card 5 (New) -->
+          <div class="result-scroll-card" style="background-image: url('logo/spiritual.jpg')">
+            <div class="result-overlay"></div>
+            <div class="result-inner-content">
+              <h3>Excellence in Everything</h3>
+              <p>Pursuing the highest standards in academics, arts, and athletics for His glory.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Upcoming Events -->
     <section class="section section-events fade-in-section">
       <div class="events-container">
         <div class="events-header">
@@ -356,7 +417,7 @@
         });
       }, observerOptions);
 
-      document.querySelectorAll('.fade-in-section').forEach(section => {
+      document.querySelectorAll('.fade-in-section, .slide-in-hidden').forEach(section => {
         observer.observe(section);
       });
 
@@ -421,6 +482,38 @@
       setTimeout(updateMargin, 500);
       setTimeout(updateMargin, 1000);
     }
+
+    /* Sticky Horizontal Scroll Logic */
+    const stickySection = document.getElementById('resultsScrollSection');
+    const resultsTrack = document.getElementById('resultsTrack');
+
+    function initHorizontalScroll() {
+      if (!stickySection || !resultsTrack) return;
+
+      window.addEventListener('scroll', () => {
+        const offsetTop = stickySection.offsetTop;
+        const sectionHeight = stickySection.offsetHeight;
+        const scrollY = window.scrollY;
+        const windowHeight = window.innerHeight;
+
+        // Calculate progress
+        let progress = (scrollY - offsetTop) / (sectionHeight - windowHeight);
+        
+        // Clamp progress
+        progress = Math.max(0, Math.min(1, progress));
+        
+        // Calculate Translation
+        const maxScroll = resultsTrack.scrollWidth - window.innerWidth;
+        
+        if (maxScroll > 0) {
+          const translate = maxScroll * progress;
+          resultsTrack.style.transform = `translateX(-${translate}px)`;
+        }
+      }, { passive: true });
+    }
+    
+    // Initialize
+    initHorizontalScroll();
 
     // Formation sticky scroll removed
   </script>

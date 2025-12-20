@@ -2,7 +2,7 @@
    BCS Design System - Modern & Premium
    =================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Faustina:ital,wght@0,300..800;1,300..800&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+/* Fonts are loaded via index.html */
 
 /* CSS Variables */
 :root {
@@ -26,8 +26,8 @@
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   
   /* Typography */
-  --font-primary: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-display: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-primary: 'Rubik', sans-serif;
+  --font-display: 'Playfair Display', serif;
   
   /* Spacing */
   --spacing-xs: 0.25rem;
@@ -72,6 +72,11 @@ body {
   background-color: var(--bg-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
 }
 
 /* ===================================
@@ -1188,8 +1193,107 @@ body {
   font-weight: 200; /* Ensure it's not too bold or thin */
 }
 
-/* 5. Upcoming Events Timeline */
-/* 5. Upcoming Events Timeline */
+/* 5. Results Section (Horizontal Scroll) */
+.section-results-scroll {
+  height: 800vh; /* Determines the scroll duration */
+  position: relative;
+  background: var(--white);
+  margin-top: 4rem;
+  margin-bottom: 7rem;
+}
+
+.sticky-wrapper {
+  position: sticky;
+  top: 100px; /* Offset for the site navigation header */
+  height: calc(100vh - 100px); /* Adjust height to account for offset */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+  padding-top: 40px; /* Space within the section */
+  overflow: hidden;
+  width: 100%;
+}
+
+.results-header-group {
+  position: relative;
+  margin-left: 10vw;
+  margin-bottom: 60px; /* Adjusted spacing for better fit */
+  text-align: left;
+  max-width: 800px;
+  z-index: 10;
+}
+
+.results-headline {
+  font-family: var(--font-display);
+  font-size: 2.75rem;
+  line-height: 1.1;
+  font-weight: 800;
+  color: var(--dark-purple);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  display: block;
+}
+
+.results-text {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: #060606;
+  margin: 0; /* Removed auto margin */
+}
+.horizontal-track {
+  display: flex;
+  gap: 50px;
+  width: max-content;
+  padding: 0 10vw 120px 10vw; /* Explicit bottom spacing for cards */
+  will-change: transform;
+  align-items: center;
+}
+
+.result-scroll-card {
+  width: 50vw;
+  max-width: 500px;
+  height: 50vh; /* Reduced height to ensure vertical fit */
+  max-height: 600px;
+  flex-shrink: 0;
+  position: relative;
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.result-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 10%, transparent 100%);
+  z-index: 1;
+}
+
+.result-inner-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 3rem;
+  color: var(--white);
+  z-index: 2;
+}
+
+.result-inner-content h3 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.result-inner-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* 6. Upcoming Events Timeline */
 .section-events {
   background: var(--yellow-dull);
   padding: 6rem 2rem;
@@ -1238,8 +1342,6 @@ body {
   position: relative;
   background-size: cover;
   background-position: center;
-  /* border: 4px solid var(--white); removed as per user request */
-  border-radius: 10px;
   display: flex;
   align-items: flex-end; /* Text at bottom */
   text-align: left;
