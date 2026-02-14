@@ -10,7 +10,7 @@
   --dark-purple: #532380;
   --white: hsl(0, 0%, 100%);
   --purple-light: hsl(280, 60%, 95%);
-  --yellow-dull: hsla(45, 70%, 65%, 0.851);
+  --yellow-dull: hsla(45, 70%, 65%, 0.467);
   
   /* Semantic Colors */
   --text-primary: var(--dark-purple);
@@ -426,7 +426,7 @@ h1, h2, h3, h4, h5, h6 {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.3); /* Slightly lighter overlay */
+  background: rgba(0, 0, 0, 0.6); /* Slightly lighter overlay */
   z-index: 1; /* Overlay above video but below content */
 }
 
@@ -453,12 +453,12 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem 2.5rem;
-  background-color: var(--yellow-dull);
-  color: var(--dark-purple);
+  padding: 1.4rem 3rem;
+  background-color: var(--dark-purple);
+  color: var(--white);
   text-transform: uppercase;
-  font-weight: 600;
-  font-size: .9rem;
+  font-weight: 400;
+  font-size: 14px !important;
   border: none;
   border-radius: 30px;
   transition: all var(--transition-base);
@@ -467,9 +467,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-enroll:hover {
-  transform: translateY(-3px);
-  background-color: var(--white);
-  padding-right: 2rem; /* Slightly adjust padding on hover for balance if needed, or keep consistent */
+  background-color: var(--dark-purple);
+  /* Slightly adjust padding on hover for balance if needed, or keep consistent */
 }
 
 .icon-arrow {
@@ -1443,10 +1442,10 @@ h1, h2, h3, h4, h5, h6 {
 
 /* 6. Upcoming Events Timeline */
 .section-events {
-  background: var(--white);
+  background: var(--yellow-dull);
   padding: 2rem 2rem 6rem 2rem;
   color: var(--dark-purple);
-  margin-top: 2rem;
+  margin-top: 0;
 }
 
 .events-container {
@@ -1506,9 +1505,9 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(0, 0, 0, 0.215);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   display: flex;
   align-items: stretch;
   color: var(--white);
