@@ -213,19 +213,254 @@
     
     </section>
 
-    <!-- 4. The PRIDE Journey -->
-    <section class="section section-journey">
-      <video class="journey-video" autoplay muted loop playsinline>
-        <source src="pride.mp4" type="video/mp4">
-      </video>
-      <div class="journey-overlay"></div>
-      
-      <div class="container relative-content">
-       <!-- <h2 class="section-title text-center text-white">The PRIDE Journey</h2> -->
-        <div class="journey-content">
-          <p class="section-text text-center text-white">
-           The PRIDE Journey helps students grow academically, spiritually, socially, and personally. It gives them a clear path toward excellence, character, service, and confident communication — skills and values they practice every day at BCS
+    <!-- 4. The PRIDE Journey (Interactive Tabs) -->
+    <section class="foundation-section">
+      <div class="container">
+        <header class="section-header-foundation">
+          <h1 class="section-title">PRIDE Journey</h1>
+          <p class="section-description">
+            The PRIDE Journey helps students grow academically, spiritually, socially, and personally. 
+            It gives them a clear path toward excellence, character, service, and confident communication — 
+            skills and values they practice every day at BCS
           </p>
+        </header>
+        
+        <div class="tabs-wrapper">
+          <nav class="tab-nav" role="tablist">
+            <button class="tab-button active" data-tab="pursuing" data-letter="P" role="tab" aria-selected="true">
+              <span class="tab-full">Pursuing Excellence</span>
+              <span class="tab-letter">P</span>
+            </button>
+            <button class="tab-button" data-tab="reaching" data-letter="R" role="tab" aria-selected="false">
+              <span class="tab-full">Reaching Out</span>
+              <span class="tab-letter">R</span>
+            </button>
+            <button class="tab-button" data-tab="involved" data-letter="I" role="tab" aria-selected="false">
+              <span class="tab-full">Involved Thinkers</span>
+              <span class="tab-letter">I</span>
+            </button>
+            <button class="tab-button" data-tab="developing" data-letter="D" role="tab" aria-selected="false">
+              <span class="tab-full">Developing Character</span>
+              <span class="tab-letter">D</span>
+            </button>
+            <button class="tab-button" data-tab="effective" data-letter="E" role="tab" aria-selected="false">
+              <span class="tab-full">Effective Communicators</span>
+              <span class="tab-letter">E</span>
+            </button>
+          </nav>
+          
+          <div class="tab-content-wrapper">
+            <!-- P - Pursuing Excellence -->
+            <div class="tab-content active" id="pursuing" role="tabpanel">
+              <h2 class="content-title">Pursuing Academic Excellence</h2>
+              
+              <div class="belief-item">
+                <p class="belief-text" style="font-size: 1.15rem; margin-bottom: 35px;">
+                  Students discover their God-given abilities while striving to maximize their potential. 
+                  Academic excellence at BCS isn't about perfection—it's about giving your best effort and 
+                  continually growing in your capabilities.
+                </p>
+              </div>
+              
+              <div class="values-grid">
+                <div class="value-card">
+                  <h3 class="value-name">Discover God-Given Abilities</h3>
+                  <p class="value-description">
+                    Students identify their unique strengths and talents while working to develop their full 
+                    potential across academic, artistic, and physical domains.
+                  </p>
+                </div>
+                
+                <div class="value-card">
+                  <h3 class="value-name">Master Curricular Goals</h3>
+                  <p class="value-description">
+                    Through rigorous coursework across disciplines, students build strong foundations in 
+                    mathematics, sciences, humanities, arts, and more—preparing them for college and beyond.
+                  </p>
+                </div>
+                
+                <div class="value-card">
+                  <h3 class="value-name">Create Quality Work</h3>
+                  <p class="value-description">
+                    Students learn to plan, create, and produce exceptional intellectual, artistic, and 
+                    physical products that reflect careful thought, effort, and pride in their work.
+                  </p>
+                </div>
+                
+                <div class="value-card">
+                  <h3 class="value-name">Integrate Learning</h3>
+                  <p class="value-description">
+                    Students demonstrate the ability to connect past, present, and future information throughout 
+                    their learning process, seeing how knowledge builds across time and disciplines.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- R - Reaching Out -->
+            <div class="tab-content" id="reaching" role="tabpanel">
+              <h2 class="content-title">Reaching Out to Others</h2>
+              
+              <div class="belief-item">
+                <p class="belief-text" style="font-size: 1.15rem; margin-bottom: 35px;">
+                  True success is measured by how well we serve others. Students develop compassion and learn 
+                  that their gifts, talents, and education are meant to be invested in making their communities 
+                  and world better.
+                </p>
+              </div>
+              
+              <div class="values-grid">
+                <div class="value-card">
+                  <h3 class="value-name">Develop Compassion & Awareness</h3>
+                  <p class="value-description">
+                    Students cultivate an increasing awareness of others' needs and circumstances, leading to 
+                    genuine compassion that motivates meaningful community service and action.
+                  </p>
+                </div>
+                
+                <div class="value-card">
+                  <h3 class="value-name">Work as a Team</h3>
+                  <p class="value-description">
+                    Through collaborative projects and group activities, students learn to accomplish common 
+                    goals through effective teamwork, leveraging diverse strengths and perspectives.
+                  </p>
+                </div>
+                
+                <div class="value-card">
+                  <h3 class="value-name">Contribute & Serve</h3>
+                  <p class="value-description">
+                    Students actively contribute their time, energy, and resources to serve others—whether 
+                    through local service projects, mission trips, or daily acts of kindness in their community.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- I - Involved Thinkers -->
+            <div class="tab-content" id="involved" role="tabpanel">
+              <h2 class="content-title">Involved Thinkers</h2>
+              
+              <div class="belief-item">
+                <p class="belief-text" style="font-size: 1.15rem; margin-bottom: 35px;">
+                  We equip students to be critical, creative thinkers who can analyze complex problems, 
+                  evaluate information, and make wise decisions. They don't just memorize answers—they learn 
+                  to ask better questions.
+                </p>
+              </div>
+              
+              <div class="values-grid">
+                <div class="value-card">
+                  <h3 class="value-name">Identify & Use Resources</h3>
+                  <p class="value-description">
+                    Students learn to identify, assess, analyze, integrate, and effectively use available 
+                    resources to solve problems and complete projects with excellence.
+                  </p>
+                </div>
+                
+                <div class="value-card">
+                  <h3 class="value-name">Make Wise Decisions</h3>
+                  <p class="value-description">
+                    Through reflection and evaluation, students learn to establish values, prioritize 
+                    effectively, and navigate the decision-making process with wisdom and discernment.
+                  </p>
+                </div>
+                
+                <div class="value-card">
+                  <h3 class="value-name">Reason Logically & Creatively</h3>
+                  <p class="value-description">
+                    Students develop the ability to form clear lines of reasoning from premise to conclusion, 
+                    combining both logical analysis and creative thinking to solve complex problems.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- D - Developing Character -->
+            <div class="tab-content" id="developing" role="tabpanel">
+              <h2 class="content-title">Developing Christian Character</h2>
+              
+              <div class="belief-item">
+                <p class="belief-text" style="font-size: 1.15rem; margin-bottom: 35px;">
+                  Character matters more than credentials. Students grow in their faith, learn to think 
+                  biblically about the world around them, and develop the courage to live out their convictions 
+                  with integrity and grace.
+                </p>
+              </div>
+              
+              <div class="values-grid">
+                <div class="value-card">
+                  <h3 class="value-name">Walk with Christ</h3>
+                  <p class="value-description">
+                    Students understand what it means to have faith in Jesus Christ as Lord and Savior, 
+                    and learn to walk in continual, growing relationship with Him daily.
+                  </p>
+                </div>
+                
+                <div class="value-card">
+                  <h3 class="value-name">Understand Christian Worldview</h3>
+                  <p class="value-description">
+                    Students can articulate the Christian worldview and understand how it shapes their 
+                    perspective on culture, ethics, relationships, and their purpose in the world.
+                  </p>
+                </div>
+                
+                <div class="value-card">
+                  <h3 class="value-name">Share Their Faith</h3>
+                  <p class="value-description">
+                    Students learn how to share their faith in Christ and communicate the ongoing work of 
+                    God in their lives with confidence, compassion, and authenticity.
+                  </p>
+                </div>
+                
+                <div class="value-card">
+                  <h3 class="value-name">Apply Scripture</h3>
+                  <p class="value-description">
+                    Students understand the relevance of Scripture to all their experiences and circumstances, 
+                    learning to filter decisions and perspectives through biblical truth.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- E - Effective Communicators -->
+            <div class="tab-content" id="effective" role="tabpanel">
+              <h2 class="content-title">Effective Communicators</h2>
+              
+              <div class="belief-item">
+                <p class="belief-text" style="font-size: 1.15rem; margin-bottom: 35px;">
+                  Communication is more than speaking—it's about truly listening, understanding others, and 
+                  expressing yourself with clarity and conviction. Students learn to articulate their ideas 
+                  persuasively while engaging respectfully with those who disagree.
+                </p>
+              </div>
+              
+              <div class="values-grid">
+                <div class="value-card">
+                  <h3 class="value-name">Discern & Interpret Messages</h3>
+                  <p class="value-description">
+                    Students develop the ability to discern and interpret the meaning of messages conveyed 
+                    by others, understanding both explicit content and underlying context.
+                  </p>
+                </div>
+                
+                <div class="value-card">
+                  <h3 class="value-name">Express Clearly</h3>
+                  <p class="value-description">
+                    Through writing, verbal articulation, and creative activity, students learn to clearly 
+                    express themselves with precision, persuasiveness, and appropriate tone.
+                  </p>
+                </div>
+                
+                <div class="value-card">
+                  <h3 class="value-name">Communicate Emotions & Ideas</h3>
+                  <p class="value-description">
+                    Students learn to identify and appropriately express their feelings, thoughts, and 
+                    emotions in healthy, constructive ways that build relationships and understanding.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -738,6 +973,77 @@
         }
       });
     }
+
+    function initPrideJourney() {
+      const tabButtons = document.querySelectorAll('.tab-button');
+      const tabContents = document.querySelectorAll('.tab-content');
+      const tabNav = document.querySelector('.tab-nav');
+      
+      if (!tabNav || !tabButtons.length) return;
+
+      // Function to update sliding indicator position
+      function updateIndicator(button) {
+        const navRect = tabNav.getBoundingClientRect();
+        const buttonRect = button.getBoundingClientRect();
+        
+        const left = buttonRect.left - navRect.left - 4; // subtract nav padding (4px)
+        const width = buttonRect.width;
+        const height = buttonRect.height;
+        
+        tabNav.style.setProperty('--indicator-left', `${left}px`);
+        tabNav.style.setProperty('--indicator-width', `${width}px`);
+        tabNav.style.setProperty('--indicator-height', `${height}px`);
+      }
+      
+      // Initialize indicator position on first active button
+      const activeButton = document.querySelector('.tab-button.active');
+      if (activeButton) {
+        // Wait for fonts/layout if necessary, but 100ms is usually safe
+        setTimeout(() => updateIndicator(activeButton), 100);
+      }
+      
+      // Handle tab clicks
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const targetTab = button.getAttribute('data-tab');
+          
+          // Remove active class from all buttons and contents
+          tabButtons.forEach(btn => {
+            btn.classList.remove('active');
+            btn.setAttribute('aria-selected', 'false');
+          });
+          tabContents.forEach(content => {
+            content.classList.remove('active');
+          });
+          
+          // Add active class to clicked button and corresponding content
+          button.classList.add('active');
+          button.setAttribute('aria-selected', 'true');
+          const content = document.getElementById(targetTab);
+          if (content) content.classList.add('active');
+          
+          // Update sliding indicator
+          updateIndicator(button);
+        });
+      });
+      
+      // Update indicator on window resize
+      window.addEventListener('resize', () => {
+        const currentActive = document.querySelector('.tab-button.active');
+        if (currentActive) {
+          updateIndicator(currentActive);
+        }
+      });
+    }
+
+    // Initialize all components when DOM is ready
+    document.addEventListener('DOMContentLoaded', () => {
+      initializeNavigation();
+      initCommunityCarousel();
+      initFooterReveal();
+      initModals();
+      initPrideJourney();
+    });
   </script>
   </body>
 </html>

@@ -1251,52 +1251,281 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* 4. The PRIDE Journey */
-.section-journey {
+/* 4. The PRIDE Journey (Interactive Tabs) */
+.foundation-section {
+  padding: 100px 0 120px;
   position: relative;
-  height: 700px; /* Increased height */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background-color: var(--dark-purple); /* Fallback */
+  background: var(--yellow-dull);
 }
 
-.journey-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-  
+/* Header */
+.section-header-foundation {
+  text-align: center;
+  margin-bottom: 80px;
 }
 
-.journey-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6); /* Dark overlay for text readability */
-  z-index: 1;
+.foundation-section .section-title {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1.2;
+  color: var(--dark-purple);
+  margin-bottom: 25px;
 }
 
-.relative-content {
-  position: relative;
-  z-index: 2;
-  max-width: 800px; /* Constrain width for better readability */
-}
-
-/* Typography Consistency for Journey */
-.section-journey .section-title {
-  color: var(--white);
-  font-size: 2.75rem; /* Match Formation headline */
-  margin-bottom: 1.5rem;
-}
-
-.section-journey .section-text {
-  color: var(--white);
-  font-size: 1.6rem; /* Match Formation p size (approx) */
+.section-description {
+  font-family: var(--font-primary);
+  font-size: 1.2rem;
+  color: #4a4a4a;
+  max-width: 700px;
+  margin: 0 auto;
   line-height: 1.8;
-  font-weight: 200; /* Ensure it's not too bold or thin */
+}
+
+/* Tabs Container */
+.tabs-wrapper {
+  background: transparent;
+  border-radius: 0;
+  overflow: visible;
+  box-shadow: none;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Tab Navigation */
+.tab-nav {
+  display: flex;
+  background: var(--dark-purple);
+  padding: 4px;
+  position: relative;
+  overflow-x: auto;
+  scrollbar-width: none;
+  border-radius: 100px;
+  gap: 8px;
+  --indicator-left: 0px;
+  --indicator-width: 0px;
+  --indicator-height: 0px;
+}
+
+.tab-nav::-webkit-scrollbar {
+  display: none;
+}
+
+/* Sliding indicator background */
+.tab-nav::before {
+  content: '';
+  position: absolute;
+  background: #f4e8a3;
+  border-radius: 100px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+  left: var(--indicator-left);
+  width: var(--indicator-width);
+  height: var(--indicator-height);
+  top: 4px;
+}
+
+.tab-button {
+  flex: 1;
+  min-width: 160px;
+  padding: 18px 28px;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  text-align: center;
+  letter-spacing: 0.3px;
+  border-radius: 100px;
+  z-index: 2;
+}
+
+.tab-letter {
+  display: none;
+}
+
+.tab-full {
+  display: inline;
+}
+
+.tab-button:hover {
+  color: var(--white);
+}
+
+.tab-button.active {
+  color: var(--dark-purple);
+  font-weight: 700;
+}
+
+/* Tab Content */
+.tab-content-wrapper {
+  position: relative;
+  min-height: 500px;
+}
+
+.tab-content {
+  display: none;
+  padding: 60px 0;
+  animation: fadeSlideIn 0.6s ease-out;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.content-title {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--dark-purple);
+  margin-bottom: 35px;
+}
+
+.belief-item {
+  margin-bottom: 30px;
+  padding-left: 0;
+  position: relative;
+}
+
+.belief-text {
+  font-family: var(--font-primary);
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: #4a4a4a;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.value-card {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(10, 22, 40, 0.1);
+}
+
+.value-name {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--dark-purple);
+  margin-bottom: 12px;
+}
+
+.value-description {
+  font-family: var(--font-primary);
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: #4a4a4a;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .foundation-section .section-title {
+    font-size: 2.8rem;
+  }
+  
+  .tab-full {
+    display: none;
+  }
+  
+  .tab-letter {
+    display: inline;
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+  
+  .tab-nav {
+    justify-content: space-between;
+    gap: 0;
+    padding: 8px 8px;
+  }
+  
+  .tab-button {
+    min-width: 65px;
+    max-width: 65px;
+    width: 65px;
+    height: 65px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    flex-grow: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.2rem;
+  }
+  
+  /* Spread letters with P and E touching edges */
+  .tab-nav {
+    flex-direction: row;
+    border-radius: 100px;
+    gap: 0;
+    padding: 6px 6px;
+    justify-content: space-between;
+  }
+  
+  .tab-button {
+    min-width: 58px;
+    max-width: 58px;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+  }
+  
+  .tab-letter {
+    font-size: 1.3rem;
+  }
+  
+  /* Keep horizontal sliding indicator with toggle effect */
+  .tab-nav::before {
+    left: var(--indicator-left);
+    width: var(--indicator-width) !important;
+    height: var(--indicator-height);
+    top: 6px;
+    border-radius: 50%;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .tab-content {
+    padding: 35px 0;
+  }
+  
+  .content-title {
+    font-size: 1.8rem;
+  }
+  
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* 5. Results Section (Static Grid) */
