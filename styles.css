@@ -10,7 +10,7 @@
   --dark-purple: #532380;
   --white: hsl(0, 0%, 100%);
   --purple-light: hsl(280, 60%, 95%);
-  --yellow-dull: hsl(45, 70%, 65%);
+  --yellow-dull: hsla(45, 70%, 65%, 0.851);
   
   /* Semantic Colors */
   --text-primary: var(--dark-purple);
@@ -865,7 +865,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* 2. Community - Profile Cards Layout */
 .section-community {
-  background-color: var(--white);
+  background-color: var(--yellow-dull);
   padding: 8rem 0;
   overflow-x: hidden; /* Prevent horizontal scroll from full-bleed carousel */
   overflow-y: visible;
@@ -931,39 +931,51 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0;
 }
 
-/* Controls (Bottom Right) */
+/* Controls (Side Navigation) */
 .carousel-controls {
-  display: flex;
-  gap: 15px;
-  justify-content: flex-start;
-  margin-top: 30px;
-  /* Offset buttons back to align with the container's content edge */
-  margin-right: calc((100vw - 100%) / 2 + 40px);
+  position: static;
+  margin: 0;
 }
 
 .carousel-btn {
-  width: 50px;
-  height: 50px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
-  border: 2px solid var(--dark-purple);
-  background: transparent;
+  border: none;
+  background: white;
   color: var(--dark-purple);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
   font-size: 1.2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.prev-btn {
+  left: -27px; /* Positioned on the left edge of the cards */
+}
+
+.next-btn {
+  /* Far end right: Positioned near the edge of the screen-bleeding wrapper */
+  right: 60px; 
 }
 
 .carousel-btn:hover {
   background: var(--dark-purple);
   color: var(--white);
+  transform: translateY(-50%) scale(1.1);
 }
 
 .carousel-btn:disabled {
-  opacity: 0.3;
+  opacity: .6;
   cursor: not-allowed;
+  transform: translateY(-50%) scale(1);
 }
 
 /* Desktop sizing: 340px width to ensure 2.5 cards peek correctly at the screen edge */
