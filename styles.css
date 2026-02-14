@@ -42,12 +42,6 @@
   --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
   
-  /* Border Radius */
-  --radius-sm: 0.375rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 0.75rem;
-  --radius-xl: 1rem;
-  --radius-full: 9999px;
 }
 
 /* ===================================
@@ -255,7 +249,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 3px;
   height: 0;
   background: var(--dark-purple);
-  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+ 
   transition: height var(--transition-base);
 }
 
@@ -292,7 +286,7 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
   font-weight: 600;
   font-size: 0.8rem;
-  border-radius: var(--radius-md);
+  border-radius: 30px;
   border: none;
   cursor: pointer;
   transition: all var(--transition-base);
@@ -466,7 +460,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   font-size: .9rem;
   border: none;
-  border-radius: var(--radius-sm);
+  border-radius: 30px;
   transition: all var(--transition-base);
   cursor: pointer;
   letter-spacing: 1px;
@@ -672,20 +666,7 @@ h1, h2, h3, h4, h5, h6 {
    Homepage Sections
    =================================== */
 
-/* Animation Classes - optimized for zero delay */
-.fade-in-section {
-  opacity: 0;
-  transform: translateY(15px);
-  transition: opacity 0.25s cubic-bezier(0.215, 0.61, 0.355, 1), transform 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
-  will-change: opacity, transform;
-  visibility: hidden;
-}
-
-.fade-in-section.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-  visibility: visible;
-}
+/* Animation Classes Removed for Performance */
 
 .section {
   padding: 5rem 2rem;
@@ -882,162 +863,199 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* 2. Community - Carousel Layout */
-.section-community .container {
-    max-width: 1400px; /* Wider for carousel */
+/* 2. Community - Profile Cards Layout */
+.section-community {
+  background-color: var(--white);
 }
 
-/* Carousel Wrapper */
-.carousel-wrapper {
-  background-color: hsl(45, 70%, 65%);
-  border-radius: 12px;
-  padding: 5rem 4rem;
-  margin: 0 40px;
-  color: var(--white);
-  overflow: hidden;
-  position: relative;
+.profile-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
 }
 
-/* Header & Nav */
-.carousel-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-  gap: 1rem;
+.profile-header {
+  text-align: center;
+  margin-bottom: 4rem;
 }
 
-.carousel-title {
+.profile-title {
   font-family: var(--font-display);
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: 3rem;
+  font-weight: 800;
   color: var(--dark-purple);
-  line-height: 1.2;
-  max-width: 600px;
-  margin: 0 0 0.5rem 0; /* Add bottom margin */
+  margin-bottom: 1rem;
+  text-transform: uppercase;
 }
 
-.carousel-subtitle {
-  font-size: 1.1rem;
-  color: #1c1c1c;
-  max-width: 600px;
-  line-height: 1.5;
-  margin: 0;
+.profile-subtitle {
+  font-size: 1.25rem;
+  color: var(--dark-purple);
+  opacity: 0.8;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
 }
 
-.carousel-nav {
+.profile-grid {
   display: flex;
-  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 3rem;
 }
 
-.nav-btn {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--white);
+/* ===== PROFILE CARD ===== */
+.profile-card {
+  width: 100%;
+  max-width: 360px;
+  height: 460px;
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  background: #f4f4f4;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+  font-family: var(--font-primary);
+  /* Improved GPU performance */
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.profile-card:hover {
+  transform: translateY(-10px) translateZ(0);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.12);
+}
+
+/* ===== IMAGE (bottom) ===== */
+.profile-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  /* Faster image decoding hint */
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* ===== PERFORMANCE OVERLAY — GRADIENT ONLY (NO BLUR) ===== */
+.profile-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 55%;            /* Slightly higher for better text contrast without blur */
+  z-index: 2;
+  pointer-events: none;
+
+  /* Optimized gradient for better readability without expensive blur */
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.92) 0%,
+    rgba(0,0,0,0.75) 30%,
+    rgba(0,0,0,0.4) 60%,
+    rgba(0,0,0,0.15) 80%,
+    transparent 100%
+  );
+
+  /* Performance: Removed backdrop-filter: blur(14px) as it causes scroll "hangs" */
+
+  /* Simplified masking for better rendering performance */
+  mask-image: linear-gradient(to top, black 60%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to top, black 60%, transparent 100%);
+}
+
+/* ===== CONTENT (top) ===== */
+.profile-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 26px;
+  z-index: 3;
+  color: white;
+}
+
+/* NAME */
+.profile-name {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 8px;
   display: flex;
   align-items: center;
+  gap: 8px;
+}
+
+/* VERIFIED BADGE */
+.verified {
+  background: #22c55e;
+  color: white;
+  font-size: 12px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  cursor: pointer;
-  transition: all var(--transition-base);
-  font-size: 1.2rem;
 }
 
-.nav-btn:hover {
-  background: var(--white);
-  color: var(--dark-purple);
-  border-color: var(--white);
-}
-
-/* Tabs */
-.carousel-tabs {
-  display: flex;
-  gap: 2rem;
-  margin-bottom: 2.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding-bottom: 1rem;
-}
-
-
-/* Track & Cards */
-.carousel-track-container {
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  /* Hide scrollbar */
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* IE 10+ */
-}
-
-.carousel-track-container::-webkit-scrollbar { 
-    display: none;  /* Chrome Safari */
-}
-
-.carousel-track {
-  display: flex;
-  gap: 20px;
-  padding-bottom: 1rem; /* Space for shadow if needed */
-}
-
-.carousel-card {
-  min-width: calc((100% - 40px) / 3); /* Show 3 cards exactly */
-  background-color: transparent; /* Clean look */
-  border-radius: 15px;
-  overflow: hidden;
-  transition: transform var(--transition-base);
-}
-
-.carousel-card:hover {
-  transform: translateY(-2px);
-}
-
-.card-image {
-  height: 320px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 6px;
-  margin-bottom: 1rem;
-}
-
-.card-content h3 {
-  font-family: var(--font-primary);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--dark-purple);
-  margin-top: 2rem;
-  margin-bottom: 0.5rem;
-  text-transform: uppercase;
- 
-}
-
-.card-content p {
-  font-size: 1rem;
+/* ROLE */
+.profile-role {
+  margin: 0 0 18px;
+  color: rgba(255,255,255,0.85);
+  font-size: 15px;
   line-height: 1.5;
-  color: #1c1c1c;
 }
 
-@media (max-width: 768px) {
-  .carousel-wrapper {
-    padding: 2rem;
+/* FOOTER */
+.profile-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* STATS */
+.stats {
+  display: flex;
+  gap: 18px;
+}
+
+.stat {
+  color: rgba(255,255,255,0.9);
+  font-size: 14px;
+}
+
+/* FOLLOW BUTTON */
+.follow-btn {
+  background: white;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  color: var(--dark-purple);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+  transition: 0.25s ease;
+}
+
+.follow-btn:hover {
+  transform: translateY(-2px);
+  background: var(--yellow-dull);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+  .profile-card {
+    height: 420px;
   }
-  
-  .carousel-header {
-    flex-direction: column;
+
+  .profile-content {
+    padding: 20px;
   }
-  
-  .carousel-title {
-    font-size: 2rem;
-  }
-  
-  .carousel-tabs {
-    gap: 1rem;
-    overflow-x: auto;
-  }
-  
-  .carousel-card {
-    min-width: 280px;
+
+  .profile-name {
+    font-size: 20px;
   }
 }
 
@@ -1198,104 +1216,122 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 200; /* Ensure it's not too bold or thin */
 }
 
-/* 5. Results Section (Horizontal Scroll) */
-.section-results-scroll {
-  height: 300vh; /* Determines the scroll duration - reduced for snappy horizontal scroll */
-  position: relative;
+/* 5. Results Section (Static Grid) */
+.section-results {
   background: var(--white);
-  margin-top: 4rem;
-  margin-bottom: 7rem;
+  padding: 6rem 2rem;
 }
 
-.sticky-wrapper {
-  position: sticky;
-  top: 100px; /* Offset for the site navigation header */
-  height: calc(100vh - 100px); /* Adjust height to account for offset */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; 
-  padding-top: 40px; /* Space within the section */
-  overflow: hidden;
-  width: 100%;
+.results-container {
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-.results-header-group {
-  position: relative;
-  margin-left: 10vw;
-  margin-bottom: 60px; /* Adjusted spacing for better fit */
-  text-align: left;
-  max-width: 800px;
-  z-index: 10;
+.results-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.results-headline {
+.results-title {
   font-family: var(--font-display);
-  font-size: 2.75rem;
-  line-height: 1.1;
+  font-size: 3rem;
   font-weight: 800;
   color: var(--dark-purple);
   margin-bottom: 1rem;
   text-transform: uppercase;
-  display: block;
 }
 
-.results-text {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  color: #060606;
-  margin: 0; /* Removed auto margin */
+.results-subtitle {
+  font-family: var(--font-primary);
+  font-size: 1.125rem;
+  color: #4a4a4a;
+  line-height: 1.6;
 }
-.horizontal-track {
+
+.results-grid {
   display: flex;
-  gap: 75px;
-  width: max-content;
-  padding: 0 10vw 120px 10vw; /* Explicit bottom spacing for cards */
-  will-change: transform;
-  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
-.result-scroll-card {
-  width: 50vw;
-  max-width: 500px;
-  height: 50vh; /* Reduced height to ensure vertical fit */
-  max-height: 600px;
-  flex-shrink: 0;
+.result-card {
+  width: calc(33.333% - 20px);
+  min-width: 350px;
+  height: 450px;
   position: relative;
-  border-radius: 4px;
   background-size: cover;
   background-position: center;
+  border-radius: 12px;
   overflow: hidden;
   box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: flex-end;
+  /* Improved GPU performance */
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.result-card:hover {
+  transform: translateY(-10px) translateZ(0);
+  box-shadow: var(--shadow-xl);
 }
 
 .result-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 10%, transparent 100%);
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
   z-index: 1;
 }
 
-.result-inner-content {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 3rem;
-  color: var(--white);
+.result-content {
+  position: relative;
   z-index: 2;
+  padding: 2.5rem;
+  color: var(--white);
 }
 
-.result-inner-content h3 {
+.result-content h3 {
   font-family: var(--font-display);
-  font-size: 2rem;
+  font-size: 1.75rem;
   margin-bottom: 1rem;
   line-height: 1.2;
 }
 
-.result-inner-content p {
-  font-size: 1.1rem;
+.result-content p {
+  font-size: 1rem;
   line-height: 1.6;
   opacity: 0.9;
+}
+
+/* Tablet Adjustments */
+@media (max-width: 1100px) {
+  .result-card {
+    width: calc(50% - 15px);
+  }
+}
+
+@media (max-width: 768px) {
+  .results-title {
+    font-size: 2.25rem;
+  }
+  
+  .result-card {
+    width: 100%;
+    height: 400px;
+    min-width: unset;
+  }
+  
+  .result-content {
+    padding: 2rem;
+  }
+  
+  .result-content h3 {
+    font-size: 1.5rem;
+  }
 }
 
 /* 6. Upcoming Events Timeline */
@@ -1355,18 +1391,17 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   padding: 0; /* Remove default padding, handled by content */
+  border-radius: 12px;
 }
 
 .event-card:hover {
   transform: translateY(-5px);
- 
   cursor: pointer;
 }
 
 .event-overlay {
   position: absolute;
   inset: 0;
- 
   transition: background 0.4s ease;
 }
 
@@ -1452,43 +1487,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .view-all-events:hover i {
   transform: translateX(5px);
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .results-header-group {
-    margin-left: 5vw;
-    margin-bottom: 40px;
-  }
-  
-  .results-headline {
-    font-size: 2rem;
-  }
-  
-  .result-scroll-card {
-    width: 85vw; /* Wider cards on mobile for better visibility */
-    height: 40vh;
-    padding: 2rem;
-  }
-  
-  .result-inner-content h3 {
-    font-size: 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .event-card {
-    width: 100%; /* Full width cards on small mobile */
-    height: 350px;
-  }
-  
-  .events-title {
-    font-size: 1.75rem;
-  }
-}
-
-.mt-4 {
-  margin-top: 1.5rem;
 }
 
 
