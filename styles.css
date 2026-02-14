@@ -866,6 +866,8 @@ h1, h2, h3, h4, h5, h6 {
 /* 2. Community - Profile Cards Layout */
 .section-community {
   background-color: var(--white);
+  padding: 8rem 0;
+  overflow: hidden;
 }
 
 .profile-container {
@@ -874,35 +876,96 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0 40px;
 }
 
+.community-flex-layout {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+/* Header Column (Left) */
 .profile-header {
-  text-align: center;
-  margin-bottom: 4rem;
+  flex: 0 0 40%;
+  text-align: left;
+  margin-bottom: 0;
+  transform: translateY(-30px); /* Nudge up as requested */
 }
 
 .profile-title {
   font-family: var(--font-display);
   font-size: 3rem;
+  line-height: 1.1;
   font-weight: 800;
   color: var(--dark-purple);
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   text-transform: uppercase;
 }
 
 .profile-subtitle {
-  font-size: 1.25rem;
-  color: var(--dark-purple);
-  opacity: 0.8;
-  max-width: 800px;
-  margin: 0 auto;
-  line-height: 1.6;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  opacity: 0.9;
+  line-height: 1.7;
+  margin: 0;
 }
 
-.profile-grid {
+/* Carousel Column (Right) */
+.community-carousel-wrapper {
+  flex: 1;
+  position: relative;
+  min-width: 0; /* Important for flex child with overflow */
+}
+
+.carousel-viewport {
+  overflow: visible; /* We'll use a mask or just let it bleed if requested, but user said "two cards show" */
+  overflow: hidden; 
+  padding-bottom: 20px;
+}
+
+.carousel-track {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
   gap: 30px;
-  margin-bottom: 3rem;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-wrap: nowrap; /* Ensure they stay on one line */
+  margin-bottom: 0;
+}
+
+/* Controls (Bottom Right) */
+.carousel-controls {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
+
+.carousel-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid var(--dark-purple);
+  background: transparent;
+  color: var(--dark-purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+}
+
+.carousel-btn:hover {
+  background: var(--dark-purple);
+  color: var(--white);
+}
+
+.carousel-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* Desktop: Show exactly 2 cards */
+.profile-grid .profile-card {
+  flex: 0 0 calc(50% - 15px); /* Exactly half minus half the gap */
+  max-width: none;
 }
 
 /* ===== PROFILE CARD ===== */
@@ -913,7 +976,6 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   border-radius: 28px;
   overflow: hidden;
-  background: #f4f4f4;
   box-shadow: 0 20px 60px rgba(0,0,0,0.08);
   font-family: var(--font-primary);
   /* Improved GPU performance */
@@ -922,7 +984,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .profile-card:hover {
-  transform: translateY(-10px) translateZ(0);
   box-shadow: 0 30px 80px rgba(0,0,0,0.12);
 }
 
@@ -986,65 +1047,68 @@ h1, h2, h3, h4, h5, h6 {
   gap: 8px;
 }
 
-/* VERIFIED BADGE */
-.verified {
-  background: #22c55e;
-  color: white;
-  font-size: 12px;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
 /* ROLE */
 .profile-role {
-  margin: 0 0 18px;
+  margin: 0 0 24px;
   color: rgba(255,255,255,0.85);
   font-size: 15px;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 /* FOOTER */
 .profile-footer {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
-/* STATS */
-.stats {
-  display: flex;
-  gap: 18px;
-}
-
-.stat {
-  color: rgba(255,255,255,0.9);
-  font-size: 14px;
-}
-
-/* FOLLOW BUTTON */
-.follow-btn {
-  background: white;
-  border: none;
-  border-radius: 999px;
-  padding: 10px 18px;
+/* SEE MORE LINK */
+.see-more-link {
+  color: var(--white);
+  text-decoration: none;
   font-weight: 600;
-  font-size: 14px;
-  cursor: pointer;
-  color: var(--dark-purple);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.18);
-  transition: 0.25s ease;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: gap 0.3s ease, color 0.3s ease;
 }
 
-.follow-btn:hover {
-  transform: translateY(-2px);
-  background: var(--yellow-dull);
+.see-more-link i {
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+.see-more-link:hover {
+  color: var(--yellow-dull);
+  gap: 15px;
+}
+
+.see-more-link:hover i {
+  transform: translateX(5px);
 }
 
 /* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .community-flex-layout {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .profile-header {
+    flex: none;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    transform: translateY(-80px); /* Reset vertical shift on mobile */
+  }
+
+  .profile-grid .profile-card {
+    flex: 0 0 calc(100% - 30px); /* Show one card at a time on smaller screens if they use carousel */
+  }
+}
+
 @media (max-width: 480px) {
   .profile-card {
     height: 420px;
