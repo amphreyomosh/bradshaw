@@ -88,7 +88,9 @@
               <div class="carousel-viewport">
                 <div class="profile-grid carousel-track" id="communityTrack">
                   <!-- Card 1 -->
-                  <div class="profile-card">
+                  <div class="profile-card" 
+                       data-full-title="Partnership in Education" 
+                       data-full-description="At BCS, we believe that education is a collaborative journey. We actively partner with parents to ensure that the values taught at home are reinforced at school, creating a seamless environment for students to grow in character and faith. This partnership ensures that every student is supported academically, socially, and spiritually.">
                     <img class="profile-img" src="logo/walking.jpg" alt="Partnership">
                     <div class="profile-overlay"></div>
                     <div class="profile-content">
@@ -103,7 +105,9 @@
                   </div>
 
                   <!-- Card 2 -->
-                  <div class="profile-card">
+                  <div class="profile-card" 
+                       data-full-title="Built on Community" 
+                       data-full-description="Our school is more than just a place of learning; it's a family. From parent-teacher fellowships to community events, we encourage everyone to play an active role in building a supportive and Christ-centered environment. In our community, parents feel supported, students feel known, and lifelong relationships are forged.">
                     <img class="profile-img" src="logo/second.jpg" alt="Community">
                     <div class="profile-overlay"></div>
                     <div class="profile-content">
@@ -118,7 +122,9 @@
                   </div>
 
                   <!-- Card 3 -->
-                  <div class="profile-card">
+                  <div class="profile-card" 
+                       data-full-title="A Lifelong Journey" 
+                       data-full-description="The educational journey at BCS is designed to nurture the whole child. From preschool through high school, we provide a consistent, faith-based foundation that prepares students for the challenges and opportunities of life. We unite home and school to provide the stability and consistency children need to truly thrive.">
                     <img class="profile-img" src="logo/third.jpg" alt="Journey">
                     <div class="profile-overlay"></div>
                     <div class="profile-content">
@@ -133,7 +139,9 @@
                   </div>
 
                   <!-- Card 4 -->
-                  <div class="profile-card">
+                  <div class="profile-card" 
+                       data-full-title="Vibrant Student Life" 
+                       data-full-description="Life at BCS is vibrant and diverse. Students are encouraged to explore their God-given talents through arts, leadership opportunities, and social activities that build lasting friendships and personal growth. Our supportive environment allows students to discover their passions while building a foundation of character that lasts a lifetime.">
                     <img class="profile-img" src="logo/fourth.jpg" alt="Student Life">
                     <div class="profile-overlay"></div>
                     <div class="profile-content">
@@ -148,7 +156,9 @@
                   </div>
 
                   <!-- Card 5 -->
-                  <div class="profile-card">
+                  <div class="profile-card" 
+                       data-full-title="Excellence in Athletics" 
+                       data-full-description="Our athletic programs are built on the principles of teamwork, discipline, and physical excellence. We view sports as a platform for character development, teaching students to compete with integrity and for the glory of God. BCS athletes develop skills that translate far beyond the field, including leadership, grit, and sportsmanship.">
                     <img class="profile-img" src="logo/fifth.jpg" alt="Athletics">
                     <div class="profile-overlay"></div>
                     <div class="profile-content">
@@ -314,36 +324,84 @@
         <div class="events-grid">
           <!-- Event Card 1 -->
           <div class="event-card" style="background-image: url('logo/chrsimas.jpg')">
-            <div class="event-overlay"></div>
-            <div class="event-content">
-              <h3 class="event-title">Christmas Concert</h3>
-              <div class="event-details">
-                <p class="event-date"><i class="far fa-calendar"></i> Dec 17, 2025</p>
-                <p class="event-time"><i class="far fa-clock"></i> 6:00 PM</p>
+            <div class="event-info-bar">
+              <div class="event-date-tag">
+                <span class="event-month">DEC</span>
+                <span class="event-day">17</span>
+              </div>
+              <div class="event-content-tag">
+                <span class="event-category">MUSIC</span>
+                <h3 class="event-name">Christmas Concert</h3>
               </div>
             </div>
           </div>
 
           <!-- Event Card 2 -->
           <div class="event-card" style="background-image: url('logo/openhouse.jpg')">
-            <div class="event-overlay"></div>
-            <div class="event-content">
-              <h3 class="event-title">Open House Day</h3>
-              <div class="event-details">
-                <p class="event-date"><i class="far fa-calendar"></i> Mar 3, 2026</p>
-                <p class="event-time"><i class="far fa-clock"></i> 5:30 PM</p>
+            <div class="event-info-bar">
+              <div class="event-date-tag">
+                <span class="event-month">MAR</span>
+                <span class="event-day">03</span>
+              </div>
+              <div class="event-content-tag">
+                <span class="event-category">ACADEMICS</span>
+                <h3 class="event-name">Open House Day</h3>
               </div>
             </div>
           </div>
 
           <!-- Event Card 3 -->
           <div class="event-card" style="background-image: url('logo/spring.jpg')">
-            <div class="event-overlay"></div>
-            <div class="event-content">
-              <h3 class="event-title">Spring Term Begins</h3>
-              <div class="event-details">
-                <p class="event-date"><i class="far fa-calendar"></i> Jan 6, 2026</p>
-                <p class="event-time"><i class="far fa-clock"></i> 8:00 AM</p>
+            <div class="event-info-bar">
+              <div class="event-date-tag">
+                <span class="event-month">JAN</span>
+                <span class="event-day">06</span>
+              </div>
+              <div class="event-content-tag">
+                <span class="event-category">TERM</span>
+                <h3 class="event-name">Spring Term Begins</h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event Card 4 -->
+          <div class="event-card" style="background-image: url('logo/fourth.jpg')">
+            <div class="event-info-bar">
+              <div class="event-date-tag">
+                <span class="event-month">APR</span>
+                <span class="event-day">12</span>
+              </div>
+              <div class="event-content-tag">
+                <span class="event-category">COMMUNITY</span>
+                <h3 class="event-name">Parent Fellowship</h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event Card 5 -->
+          <div class="event-card" style="background-image: url('logo/fifth.jpg')">
+            <div class="event-info-bar">
+              <div class="event-date-tag">
+                <span class="event-month">MAY</span>
+                <span class="event-day">20</span>
+              </div>
+              <div class="event-content-tag">
+                <span class="event-category">SCIENCE</span>
+                <h3 class="event-name">Annual Science Fair</h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event Card 6 -->
+          <div class="event-card" style="background-image: url('logo/walking.jpg')">
+            <div class="event-info-bar">
+              <div class="event-date-tag">
+                <span class="event-month">JUN</span>
+                <span class="event-day">15</span>
+              </div>
+              <div class="event-content-tag">
+                <span class="event-category">GRADUATION</span>
+                <h3 class="event-name">Grace Celebration</h3>
               </div>
             </div>
           </div>
@@ -360,7 +418,25 @@
   <div id="footer-container"></div>
 
   <!-- JavaScript -->
-  <script>
+    <!-- Information Modal -->
+    <div id="infoModal" class="modal-overlay">
+      <div class="modal-container">
+        <button class="modal-close" id="closeModal" aria-label="Close Modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="modal-content">
+          <div class="modal-image-wrapper">
+            <img id="modalImage" src="" alt="Modal Image">
+          </div>
+          <div class="modal-text-content">
+            <h2 id="modalTitle"></h2>
+            <div id="modalDescription" class="modal-description"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
     // Load header
     fetch('header.html')
       .then(response => response.text())
@@ -476,6 +552,7 @@
       });
       /* Carousel Navigation */
       initCommunityCarousel();
+      initModals();
     }
 
     function initCommunityCarousel() {
@@ -490,15 +567,23 @@
       const totalCards = cards.length;
 
       function updateCarousel() {
-        const cardWidth = cards[0].offsetWidth;
-        const gap = 30; // Matches CSS gap
+        const viewport = track.parentElement;
+        if (!cards[0] || !viewport) return;
+        
+        const cardWidth = 340; // Explicitly locked to user preference
+        const gap = 30;
         const step = cardWidth + gap;
         
-        // Calculate max index based on screen width
-        // On desktop (2 cards), maxIndex is totalCards - 2
-        // On mobile (1 card), maxIndex is totalCards - 1
-        const visibleCards = window.innerWidth > 1024 ? 2 : 1;
-        const maxIndex = Math.max(0, totalCards - visibleCards);
+        // Get the viewport's left edge relative to the screen to calculate the full bleed width to the right
+        const rect = viewport.getBoundingClientRect();
+        const availableWidth = window.innerWidth - rect.left;
+        
+        // Calculate how many cards fit in the visible region (including bleed to screen edge)
+        const visibleCards = availableWidth / step;
+        
+        // maxIndex is when the last card is aligned with the right edge of the screen
+        // Subtracting floor of visibleCards ensures we can't scroll past the content
+        const maxIndex = Math.max(0, totalCards - Math.floor(visibleCards));
 
         // Clamp index
         if (currentIndex > maxIndex) currentIndex = maxIndex;
@@ -511,14 +596,21 @@
         nextBtn.disabled = currentIndex >= maxIndex;
       }
 
+      window.addEventListener('resize', updateCarousel);
+      updateCarousel();
+
       nextBtn.addEventListener('click', () => {
-        currentIndex++;
-        updateCarousel();
+        if (currentIndex < totalCards - 1) {
+          currentIndex++;
+          updateCarousel();
+        }
       });
 
       prevBtn.addEventListener('click', () => {
-        currentIndex--;
-        updateCarousel();
+        if (currentIndex > 0) {
+          currentIndex--;
+          updateCarousel();
+        }
       });
 
       // Initial state
@@ -554,7 +646,62 @@
       setTimeout(updateMargin, 1000);
     }
 
-    // Horizontal scroll removed for performance
+      // Horizontal scroll removed for performance
+      
+    function initModals() {
+      const modal = document.getElementById('infoModal');
+      const closeBtn = document.getElementById('closeModal');
+      const modalImage = document.getElementById('modalImage');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalDescription = document.getElementById('modalDescription');
+      const cards = document.querySelectorAll('.profile-card');
+
+      if (!modal || !cards.length) return;
+
+      function openModal(card) {
+        const title = card.getAttribute('data-full-title');
+        const desc = card.getAttribute('data-full-description');
+        const img = card.querySelector('.profile-img').src;
+
+        modalTitle.textContent = title;
+        modalDescription.textContent = desc;
+        modalImage.src = img;
+        modalImage.alt = title;
+
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      cards.forEach(card => {
+        // Entire card is clickable
+        card.addEventListener('click', (e) => {
+          // If it's the arrow link, prevent default since it's an anchor
+          if (e.target.closest('.see-more-link')) {
+            e.preventDefault();
+          }
+          openModal(card);
+        });
+      });
+
+      closeBtn.addEventListener('click', closeModal);
+
+      // Close on backdrop click
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+
+      // Close on ESC
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+          closeModal();
+        }
+      });
+    }
   </script>
-</body>
+  </body>
 </html>
