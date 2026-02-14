@@ -1295,7 +1295,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Tab Navigation */
 .tab-nav {
   display: flex;
-  background: var(--dark-purple);
+  border: 3px solid var(--dark-purple); 
   padding: 4px;
   position: relative;
   overflow-x: auto;
@@ -1315,7 +1315,7 @@ h1, h2, h3, h4, h5, h6 {
 .tab-nav::before {
   content: '';
   position: absolute;
-  background: #f4e8a3;
+   background: var(--dark-purple);
   border-radius: 100px;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1;
@@ -1331,7 +1331,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 18px 28px;
   background: transparent;
   border: none;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--dark-purple);
   font-family: var(--font-primary);
   font-size: 0.95rem;
   font-weight: 600;
@@ -1353,11 +1353,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .tab-button:hover {
-  color: var(--white);
+  color: var(--dark-purple);
 }
 
 .tab-button.active {
-  color: var(--dark-purple);
+  color: white;
   font-weight: 700;
 }
 
