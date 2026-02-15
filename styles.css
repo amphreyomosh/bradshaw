@@ -885,17 +885,17 @@ h1, h2, h3, h4, h5, h6 {
 /* Background Placeholders (Replace with actual images later) */
 .bg-img-1 {
   background-color: #ccc;
-  background-image: url('logo/prayer1.jpg');
+  background-image: url('https://s3-media0.fl.yelpcdn.com/bphoto/KeUalGe2CG11odixCwY0Yw/o.jpg');
 }
 
 .bg-img-2 {
   background-color: #aaa;
-  background-image: url('logo/prayer2.jpg');
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTM7E4jtKbaBOVMoubNxKffGtgoTi_awqevrg&s');
 }
 
 .bg-img-3 {
   background-color: #888;
-  background-image: url('logo/prayer3.jpg');
+  background-image: url('https://s3-media0.fl.yelpcdn.com/bphoto/g-ZRQLQqusKaRzGnUHEC7A/o.jpg');
 }
 
 @media (max-width: 900px) {
@@ -1786,7 +1786,7 @@ h1, h2, h3, h4, h5, h6 {
     to top,
     rgba(0,0,0,0.92) 0%,
     rgba(0,0,0,0.75) 30%,
-    rgba(0,0,0,0.3) 60%,
+    rgba(0,0,0,0.8) 60%,
     transparent 100%
   );
 }
