@@ -776,6 +776,34 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* Mission Section Responsive Fixes */
+@media (max-width: 1024px) {
+  .mission-split {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+  
+  .mission-text-content {
+    padding-right: 0;
+  }
+  
+  .mission-visuals {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .image-accordion {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-mission .section-title {
+    font-size: 2.25rem;
+  }
+}
+
 /* Image Accordion */
 .image-accordion {
   display: flex;
@@ -1111,6 +1139,10 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
+  .section-community {
+    padding: 6rem 0;
+  }
+
   .community-flex-layout {
     flex-direction: column;
     text-align: center;
@@ -1122,11 +1154,26 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
-    transform: translateY(-80px); /* Reset vertical shift on mobile */
+    transform: none; /* Reset vertical shift on mobile */
+    padding: 0 2rem;
+  }
+
+  .profile-header .section-title {
+    font-size: 2.5rem;
   }
 
   .profile-grid .profile-card {
-    flex: 0 0 calc(100% - 30px); /* Show one card at a time on smaller screens if they use carousel */
+    flex: 0 0 340px; /* Lock to fixed width even on tablet */
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-header .section-title {
+    font-size: 2.1rem;
+  }
+  
+  .profile-header .section-description {
+    font-size: 1rem;
   }
 }
 
@@ -1244,10 +1291,26 @@ h1, h2, h3, h4, h5, h6 {
   .formation-headline {
     font-size: 2.25rem;
     margin-bottom: 1rem;
+    max-width: 100%; /* Allow full width on mobile */
   }
   
   .formation-content p {
     font-size: 1rem;
+    max-width: 100%; /* Allow full width on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .formation-headline {
+    font-size: 1.85rem;
+  }
+  
+  .formation-image {
+    height: 280px;
+  }
+  
+  .formation-content {
+    padding: 2.5rem 1.5rem;
   }
 }
 
@@ -1510,6 +1573,17 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.4rem;
     font-weight: 700;
   }
+
+  .content-title {
+    font-size: 1.85rem;
+    text-align: center;
+  }
+
+  .belief-text {
+    text-align: center;
+    font-size: 1rem;
+  }
+
   
   .tab-nav {
     justify-content: space-between;
@@ -1741,16 +1815,30 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 768px) {
+  .section-results {
+    padding: 5rem 1.5rem;
+  }
+
   .results-grid {
     grid-template-columns: 1fr;
+    gap: 25px;
   }
   
   .results-title {
     font-size: 2.25rem;
   }
+
+  .results-subtitle {
+    font-size: 1rem;
+  }
   
   .result-item {
     height: 420px;
+  }
+
+  .results-footer {
+    justify-content: center;
+    margin-top: 3rem;
   }
 }
 
@@ -1794,6 +1882,28 @@ h1, h2, h3, h4, h5, h6 {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   margin-bottom: 4rem;
+}
+
+@media (max-width: 1024px) {
+  .events-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+@media (max-width: 600px) {
+  .events-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .events-title {
+    font-size: 2.25rem;
+  }
+
+  .view-all-events {
+    margin-top: 2rem;
+  }
 }
 
 .event-card {
