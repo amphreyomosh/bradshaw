@@ -1300,6 +1300,39 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.8;
   color: black;
   max-width: 550px; /* optimal reading width */
+  margin-bottom: 2.5rem; /* Space for the button */
+}
+
+.btn-formation {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 1rem 2.5rem;
+  background-color: var(--dark-purple);
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 50px;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  letter-spacing: 0.5px;
+  width: fit-content;
+}
+
+.btn-formation i {
+  font-size: 0.85rem;
+  transition: transform 0.3s ease;
+}
+
+.btn-formation:hover {
+  background-color: var(--yellow-dull);
+  color: var(--dark-purple);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.btn-formation:hover i {
+  transform: translateX(5px);
 }
 
 /* Responsive adjustments */
