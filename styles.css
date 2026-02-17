@@ -456,9 +456,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-title-sans {
-  font-family: serif;
-  font-size: 2.8rem;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
   margin-bottom: 2rem;
+  font-weight: 400;
 }
 
 /* Hero Enroll Button */
