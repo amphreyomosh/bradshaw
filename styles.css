@@ -1871,20 +1871,22 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
 }
 
-.value-card:hover .card-image {
-  transform: scale(1.1);
-  opacity: 0.4;
-}
+@media (min-width: 1025px) {
+  .value-card:hover .card-image {
+    transform: scale(1.1);
+    opacity: 0.4;
+  }
 
-.value-card:hover .value-description {
-  opacity: 1;
-  transform: translateY(0);
-  height: auto;
-  margin-top: 15px;
-}
+  .value-card:hover .value-description {
+    opacity: 1;
+    transform: translateY(0);
+    height: auto;
+    margin-top: 15px;
+  }
 
-.value-card:hover .card-content {
-  transform: translateY(-10px);
+  .value-card:hover .card-content {
+    transform: translateY(-10px);
+  }
 }
 
 /* Responsive */
@@ -1936,6 +1938,18 @@ h1, h2, h3, h4, h5, h6 {
   /* Side padding for PRIDE content */
   .foundation-section .container {
     padding: 0 1.25rem;
+  }
+
+  /* Show content by default on small/medium screens */
+  .value-card .card-image {
+    opacity: 0.35;
+  }
+
+  .value-card .value-description {
+    opacity: 1;
+    transform: translateY(0);
+    height: auto;
+    margin-top: 15px;
   }
 }
 
@@ -2756,6 +2770,7 @@ h1, h2, h3, h4, h5, h6 {
   .footer-actions {
     max-width: 100%;
   }
+ 
 }
 
 /* Animations from previous file */
