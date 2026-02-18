@@ -917,7 +917,14 @@ h1, h2, h3, h4, h5, h6 {
   }
   .section-mission .container {
     padding: 0;
+    margin: 0;
   }
+ .section {
+  padding: 3rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
   
   /* Hide desktop layout on mobile */
   .mission-split {
@@ -928,7 +935,7 @@ h1, h2, h3, h4, h5, h6 {
   .welcome {
     display: block;
     background: #ffffff;
-    padding: 0 0 20px;
+    padding: 10px 0px;
   }
 
   .welcome-inner {
@@ -937,7 +944,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 10px;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
   }
 
   /* CAROUSEL */
@@ -952,7 +959,7 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     gap: 0;
-    border-radius: 10px;
+    border-radius: 0px;
     scroll-behavior: smooth;
   
   }
@@ -964,7 +971,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     scroll-snap-align: start;
     height: 380px;
-    border-radius: 10px;
+    border-radius: 0px;
     overflow: hidden;
     background-size: cover;
     background-position: center;
