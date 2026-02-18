@@ -40,10 +40,46 @@
       </div>
     </section>
 
-    <!-- 1. Why We’re Here -->
+    <!-- 1. Why We're Here -->
     <section class="section section-mission">
       <div class="container">
         <h2 class="section-title text-center">Welcome To Bradshaw Christian School</h2>
+        
+        <!-- Mobile Carousel Layout -->
+        <div class="welcome">
+          <div class="welcome-inner">
+            <!-- Image Carousel -->
+            <div class="carousel-wrap">
+              <div class="carousel" id="carousel">
+                <div class="carousel-slide" style="background-image: url('https://s3-media0.fl.yelpcdn.com/bphoto/KeUalGe2CG11odixCwY0Yw/o.jpg');">
+                  
+                </div>
+                <div class="carousel-slide" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTM7E4jtKbaBOVMoubNxKffGtgoTi_awqevrg&s');">
+                  
+                  
+                </div>
+                <div class="carousel-slide" style="background-image: url('https://s3-media0.fl.yelpcdn.com/bphoto/g-ZRQLQqusKaRzGnUHEC7A/o.jpg');">
+                  
+                </div>
+              </div>
+
+              <!-- Dots -->
+              <div class="carousel-dots">
+                <button class="dot" onclick="goTo(0)"></button>
+                <button class="dot active" onclick="goTo(1)"></button>
+                <button class="dot" onclick="goTo(2)"></button>
+              </div>
+            </div>
+
+            <!-- Text -->
+            <div class="welcome-text">
+              <p>At Bradshaw Christian School, our purpose is simple and deeply rooted. We exist to help students discover who they are in Christ and to guide them toward lives filled with wisdom, character, and purpose. Every classroom, program, and relationship is shaped by the belief that education is more than academics — it is the formation of the whole child.</p>
+              <p>We walk alongside students as they learn to see the world through a biblical lens, understand their God-given gifts, and respond to life with courage, compassion, and integrity. Our mission is to prepare students not only for college and career, but for a meaningful life grounded in truth and lived for the good of others.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Desktop Layout (unchanged) -->
         <div class="mission-split">
           <!-- Left: Text Content -->
           <div class="mission-text-content">
@@ -1105,6 +1141,36 @@
       });
     }
 
+    // Mobile Carousel Functionality
+    function initMobileCarousel() {
+      const carousel = document.getElementById('carousel');
+      const dots = document.querySelectorAll('.dot');
+      
+      if (!carousel || dots.length === 0) return;
+      
+      let current = 0;
+
+      function goTo(index) {
+        current = index;
+        const slideWidth = carousel.clientWidth + 12;
+        carousel.scrollTo({ left: slideWidth * index, behavior: 'smooth' });
+        dots.forEach((d, i) => d.classList.toggle('active', i === index));
+      }
+
+      // Auto-advance every 3.5s
+      setInterval(() => goTo((current + 1) % 3), 3500);
+
+      // Sync dots on manual swipe
+      carousel.addEventListener('scroll', () => {
+        const index = Math.round(carousel.scrollLeft / (carousel.clientWidth + 12));
+        dots.forEach((d, i) => d.classList.toggle('active', i === index));
+        current = index;
+      });
+      
+      // Make goTo function global for onclick handlers
+      window.goTo = goTo;
+    }
+
     // Initialize all components when DOM is ready
     document.addEventListener('DOMContentLoaded', () => {
       initializeNavigation();
@@ -1112,6 +1178,7 @@
       initFooterReveal();
       initModals();
       initPrideJourney();
+      initMobileCarousel();
     });
   </script>
   </body>
