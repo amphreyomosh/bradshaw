@@ -928,13 +928,13 @@ h1, h2, h3, h4, h5, h6 {
   .welcome {
     display: block;
     background: #ffffff;
-    padding: 0 0 50px;
+    padding: 0 0 20px;
   }
 
   .welcome-inner {
     max-width: 100%;
     margin: 0;
-    padding: 0 25px;
+    padding: 0 10px;
     display: flex;
     flex-direction: column;
     gap: 30px;
