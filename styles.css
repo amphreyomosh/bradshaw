@@ -503,16 +503,16 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 768px) {
   .hero {
-    padding: 0 1.5rem 6rem 1.5rem; /* Balanced side padding */
-    justify-content: center; /* Center horizontally */
+    padding: 0 1.25rem 6rem 1.25rem; /* Reduced side padding to move left */
+    justify-content: flex-start; /* Align left */
     align-items: flex-end; /* Keep at bottom */
-    text-align: center;
+    text-align: left; /* Align text left */
   }
 
   .hero-content {
     margin-left: 0;
     max-width: 100%;
-    align-items: center;
+    align-items: flex-start; /* Align items to start (left) */
     gap: 1.25rem;
   }
 
@@ -521,7 +521,8 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .hero-title-sans {
-    font-size: 1.85rem;
+    font-size: 1.4rem; /* Adjusted for h3 and mobile */
+    text-align: left;
   }
 }
 
@@ -618,7 +619,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .nav-container {
-    padding: 0 1.5rem;
+    padding: 0 1.25rem;
   }
 
   .logo-img {
@@ -826,6 +827,9 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 768px) {
   .section-mission .section-title {
     font-size: 2.25rem;
+  }
+  .section-mission .container {
+    padding: 0 1.25rem;
   }
 }
 
@@ -1198,7 +1202,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .profile-header {
-    padding: 0 1.5rem;
+    padding: 0 1.25rem;
   }
 
   .profile-grid .profile-card {
@@ -1383,7 +1387,7 @@ h1, h2, h3, h4, h5, h6 {
   }
   
   .formation-content {
-    padding: 2.5rem 1.5rem;
+    padding: 2.5rem 1.25rem;
   }
 }
 
@@ -1679,7 +1683,7 @@ h1, h2, h3, h4, h5, h6 {
 
   /* Side padding for PRIDE content */
   .foundation-section .container {
-    padding: 0 1.5rem;
+    padding: 0 1.25rem;
   }
 }
 
@@ -1740,7 +1744,7 @@ h1, h2, h3, h4, h5, h6 {
 
   /* side padding for section titles in PRIDE */
   .section-header-foundation {
-    padding: 0 1.5rem;
+    padding: 0 1.25rem;
     margin-bottom: 3rem;
   }
 }
@@ -1907,7 +1911,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 768px) {
   .section-results {
-    padding: 5rem 1.5rem;
+    padding: 5rem 1.25rem;
   }
 
   .results-grid {
@@ -2438,7 +2442,7 @@ h1, h2, h3, h4, h5, h6 {
     min-height: auto;
     height: auto;
     z-index: 1;
-    padding: 3rem 1.5rem;
+    padding: 3rem 1.25rem; /* Match global mobile padding */
   }
 
   .footer-container {
