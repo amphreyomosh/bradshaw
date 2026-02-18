@@ -571,9 +571,9 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 768px) {
   .hero {
-    padding: 0 1.25rem;
+    padding: 0 1.25rem 12vh; /* Grounded positioning from bottom */
     justify-content: flex-start; /* Align left */
-    align-items: center; /* Center vertically on mobile too */
+    align-items: flex-end; /* Push to bottom area on mobile */
     text-align: left; /* Align text left */
   }
 
@@ -582,7 +582,7 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 100%;
     align-items: flex-start; /* Align items to start (left) */
     gap: 0.75rem; /* Tighter gap on mobile */
-    padding: 6vh 0 0; /* Slight shift down on mobile too */
+    padding: 0; /* Clear centered shifts on mobile */
   }
 
   .hero-headline {
