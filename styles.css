@@ -1386,26 +1386,90 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 768px) {
   .section-community {
-    padding: 5rem 0;
+    padding: 60px 20px;
+  }
+
+  .profile-container {
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+  }
+
+  .community-flex-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* Force children to take full width */
+    gap: 30px;
+    padding: 0;
   }
 
   .profile-header {
-    padding: 0 1.25rem;
+    padding: 0;
+    margin-bottom: 0;
+    width: 100%;
   }
 
+  /* Card width matches paragraph width */
   .profile-grid .profile-card {
-    flex: 0 0 280px; /* Even narrower on phone */
-    height: 400px; /* Proportional height reduction */
+    flex: 0 0 100%;
+    max-width: 100%;
+    width: 100%;
+    height: 480px;
+    margin: 0;
   }
-}
 
-@media (max-width: 768px) {
-  .profile-header .section-title {
-    font-size: 2.1rem;
+  /* Force wrapper to be full width */
+  .community-carousel-wrapper {
+    width: 100%;
+    margin: 0;
+    padding: 0; 
+    position: relative;
+    overflow: visible; /* Allow buttons to sit at edges */
+  }
+
+  .carousel-viewport {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .carousel-track {
+    gap: 0; /* No gap on mobile to ensure 100% cards align perfectly */
+  }
+
+  /* Mobile Navigation Button positioning at the edges */
+  .carousel-btn {
+    width: 42px;
+    height: 42px;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 20; 
+  }
+
+  .prev-btn {
+    left: 0;
+  }
+
+  .next-btn {
+    right: 0;
+  }
+  .profile-header .profile-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    line-height: 1.1;
   }
   
-  .profile-header .section-description {
-    font-size: 1rem;
+  .profile-header .profile-subtitle {
+    font-family: var(--font-primary);
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.65;
+    color: #333;
+    text-align: left !important;
+    margin-bottom: 20px;
+  }
+  .profile-role {
+    text-align: left !important;
   }
 }
 
